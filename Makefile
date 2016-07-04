@@ -1,4 +1,7 @@
-.PHONY: proto gogo-protobuf bundle grpc-gateway
+.PHONY: proto gogo-protobuf bundle grpc-gateway run
+
+run:
+	PORT=5000 go run go/server/main.go
 
 proto:	tmp/protoc/protoc gogo-protobuf grpc-gateway bundle
 	mkdir -p go/server/releaser
