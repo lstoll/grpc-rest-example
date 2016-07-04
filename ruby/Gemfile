@@ -2,4 +2,6 @@ source "https://rubygems.org"
 
 gem "grpc"
 gem "grpc-tools"
-gem "typhoeus"
+if Dir.exist? "releases_client"
+  gem "releases_client", path: "./releases_client"
+end
