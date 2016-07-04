@@ -1,5 +1,5 @@
 =begin
-service.proto
+releases.proto
 
 OpenAPI spec version: version not set
 
@@ -38,6 +38,18 @@ describe 'ReleasesApi' do
   describe 'test an instance of ReleasesApi' do
     it 'should create an instact of ReleasesApi' do
       expect(@instance).to be_instance_of(ReleasesClient::ReleasesApi)
+    end
+  end
+
+  # unit tests for add_release
+  # 
+  # 
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [ReleaserAddReleaseResponse]
+  describe 'add_release test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 

@@ -23,25 +23,21 @@ require 'date'
 
 module ReleasesClient
 
-  class ReleaserChannel
-    attr_accessor :id
-
-    attr_accessor :name
+  class ReleaserAddReleaseResponse
+    attr_accessor :release_id
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'ID',
-        :'name' => :'Name'
+        :'release_id' => :'ReleaseID'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'id' => :'String',
-        :'name' => :'String'
+        :'release_id' => :'String'
       }
     end
 
@@ -53,12 +49,8 @@ module ReleasesClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'ID')
-        self.id = attributes[:'ID']
-      end
-
-      if attributes.has_key?(:'Name')
-        self.name = attributes[:'Name']
+      if attributes.has_key?(:'ReleaseID')
+        self.release_id = attributes[:'ReleaseID']
       end
 
     end
@@ -81,8 +73,7 @@ module ReleasesClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          name == o.name
+          release_id == o.release_id
     end
 
     # @see the `==` method
@@ -94,7 +85,7 @@ module ReleasesClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name].hash
+      [release_id].hash
     end
 
     # Builds the object from hash

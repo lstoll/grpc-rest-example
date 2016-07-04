@@ -1,5 +1,5 @@
 =begin
-service.proto
+releases.proto
 
 OpenAPI spec version: version not set
 
@@ -26,6 +26,7 @@ require 'releases_client/version'
 require 'releases_client/configuration'
 
 # Models
+require 'releases_client/models/releaser_add_release_response'
 require 'releases_client/models/releaser_channel'
 require 'releases_client/models/releaser_channel_release_request'
 require 'releases_client/models/releaser_channel_releases'

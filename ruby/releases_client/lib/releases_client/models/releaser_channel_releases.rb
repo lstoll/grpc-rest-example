@@ -1,5 +1,5 @@
 =begin
-service.proto
+releases.proto
 
 OpenAPI spec version: version not set
 

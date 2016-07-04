@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 #
 =begin
-service.proto
+releases.proto
 
 OpenAPI spec version: version not set
 
@@ -31,8 +31,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Swagger-Codegen"]
   s.email       = [""]
   s.homepage    = "https://github.com/swagger-api/swagger-codegen"
-  s.summary     = "service.proto Ruby Gem"
-  s.description = "service.proto Ruby Gem"
+  s.summary     = "releases.proto Ruby Gem"
+  s.description = "releases.proto Ruby Gem"
   s.license     = "Apache 2.0"
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'

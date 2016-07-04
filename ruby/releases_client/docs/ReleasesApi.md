@@ -4,8 +4,53 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_release**](ReleasesApi.md#add_release) | **POST** /v1/release | 
 [**get_channel_releases**](ReleasesApi.md#get_channel_releases) | **GET** /v1/channel_releases/{ChannelID} | 
 [**get_release**](ReleasesApi.md#get_release) | **GET** /v1/release/{ReleaseID} | 
+
+
+# **add_release**
+> ReleaserAddReleaseResponse add_release(body)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'releases_client'
+
+api_instance = ReleasesClient::ReleasesApi.new
+
+body = ReleasesClient::ReleaserRelease.new # ReleaserRelease | 
+
+
+begin
+  result = api_instance.add_release(body)
+  p result
+rescue ReleasesClient::ApiError => e
+  puts "Exception when calling ReleasesApi->add_release: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ReleaserRelease**](ReleaserRelease.md)|  | 
+
+### Return type
+
+[**ReleaserAddReleaseResponse**](ReleaserAddReleaseResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 
 
 # **get_channel_releases**

@@ -21,6 +21,7 @@ rc = ReleasesClient::ReleasesApi.new
 channel_id = "abc-def"
 
 begin
+  rc.add_release(ReleasesClient::ReleaserRelease.new(ID: "rest-id", SHA: "restrest"))
   result = rc.get_channel_releases(channel_id)
   pp result
 rescue ReleasesClient::ApiError => e
