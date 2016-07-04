@@ -31,7 +31,7 @@ func main() {
 	// co-exist on the same http server, but only if we use SSL. and if we use
 	// SSL, we can't run on Heroku.
 	grpcServer := grpc.NewServer()
-	releaser.RegisterReleasesServer(grpcServer, &releaser.ReleaseService{})
+	releaser.RegisterReleasesServer(grpcServer, releaser.NewService())
 	grpcLis, err := net.Listen("tcp", "localhost:")
 	if err != nil {
 		panic(err)
@@ -58,7 +58,7 @@ func main() {
 
 	// Serve up a UI
 	mux.HandleFunc("/swagger.json", func(w http.ResponseWriter, req *http.Request) {
-		http.ServeFile(w, req, "go/server/releaser/service.swagger.json")
+		http.ServeFile(w, req, "go/server/releaser/releases.swagger.json")
 	})
 	mux.Handle("/swagger-ui/", http.StripPrefix("/swagger-ui/", http.FileServer(http.Dir("swagger-ui/dist"))))
 	mux.HandleFunc("/swagger-ui", func(w http.ResponseWriter, req *http.Request) {

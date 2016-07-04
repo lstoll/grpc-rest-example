@@ -40,6 +40,32 @@
         ]
       }
     },
+    "/v1/release": {
+      "post": {
+        "operationId": "AddRelease",
+        "responses": {
+          "200": {
+            "description": "Description",
+            "schema": {
+              "$ref": "#/definitions/releaserAddReleaseResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/releaserRelease"
+            }
+          }
+        ],
+        "tags": [
+          "Releases"
+        ]
+      }
+    },
     "/v1/release/{ReleaseID}": {
       "get": {
         "operationId": "GetRelease",
@@ -67,6 +93,15 @@
     }
   },
   "definitions": {
+    "releaserAddReleaseResponse": {
+      "type": "object",
+      "properties": {
+        "ReleaseID": {
+          "type": "string",
+          "format": "string"
+        }
+      }
+    },
     "releaserChannel": {
       "type": "object",
       "properties": {

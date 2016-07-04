@@ -16,6 +16,8 @@ end
 include Releaser
 
 stub = Releases::Stub.new(ARGV[0], :this_channel_is_insecure)
+rel = Release.new(ID: "ruby-grpc", SHA: "rbrbrbrbrbrbr")
+stub.add_release(rel)
 #pp stub.get_channel_releases
 crr = ChannelReleaseRequest.new
 pp stub.get_channel_releases(crr)

@@ -16,6 +16,7 @@ module Releaser
 
       rpc :GetChannelReleases, ChannelReleaseRequest, ChannelReleases
       rpc :GetRelease, ReleaseRequest, Release
+      rpc :AddRelease, Release, AddReleaseResponse
     end
 
     Stub = Service.rpc_stub_class

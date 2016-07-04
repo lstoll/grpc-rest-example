@@ -27,6 +27,10 @@ message ReleaseRequest {
   string ReleaseID = 1;
 }
 
+message AddReleaseResponse {
+  string ReleaseID = 1;
+}
+
 service Releases {
     rpc GetChannelReleases(ChannelReleaseRequest) returns (ChannelReleases) {
         option (google.api.http) = {
@@ -36,6 +40,12 @@ service Releases {
     rpc GetRelease(ReleaseRequest) returns (Release) {
         option (google.api.http) = {
             get: "/v1/release/{ReleaseID}"
+        };
+    }
+    rpc AddRelease(Release) returns (AddReleaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/release"
+            body: "*"
         };
     }
 }

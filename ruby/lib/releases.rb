@@ -23,6 +23,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "releaser.ReleaseRequest" do
     optional :ReleaseID, :string, 1
   end
+  add_message "releaser.AddReleaseResponse" do
+    optional :ReleaseID, :string, 1
+  end
 end
 
 module Releaser
@@ -31,4 +34,5 @@ module Releaser
   Channel = Google::Protobuf::DescriptorPool.generated_pool.lookup("releaser.Channel").msgclass
   ChannelReleaseRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("releaser.ChannelReleaseRequest").msgclass
   ReleaseRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("releaser.ReleaseRequest").msgclass
+  AddReleaseResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("releaser.AddReleaseResponse").msgclass
 end
