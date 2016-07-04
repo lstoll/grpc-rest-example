@@ -1,6 +1,7 @@
 .PHONY: proto gogo-protobuf bundle grpc-gateway run
 
 run:
+	if [ ! -d swagger-ui ]; then git submodule init; git submodule update; fi
 	PORT=5000 go run go/server/main.go
 
 proto:	tmp/protoc/protoc gogo-protobuf grpc-gateway bundle
