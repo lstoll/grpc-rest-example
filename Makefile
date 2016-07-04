@@ -1,4 +1,4 @@
-.PHONY: proto gogo-protobuf bundle grpc-gateway run
+.PHONY: proto gogo-protobuf bundle grpc-gateway run swagger
 
 run:
 	if [ ! -d swagger-ui ]; then git submodule init; git submodule update; fi
