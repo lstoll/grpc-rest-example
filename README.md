@@ -40,3 +40,11 @@ Consumes the generated gRPC client in [ruby/lib](ruby/lib)
 [ruby/bin/rest_client.rb](ruby/bin/rest_client.rb)
 
 Consumes the generated REST/Swagger client gem in [ruby/releases_client](ruby/releases_client)
+
+### Generation
+
+All code generation is triggered in the [Makefile](Makefile)
+
+### API Documentation
+
+Can be generated statically, but the Dynamic version version is fun. See the quickstart. The gem has documentation generated in [ruby/releases_client/doc](ruby/releases_client/doc)
