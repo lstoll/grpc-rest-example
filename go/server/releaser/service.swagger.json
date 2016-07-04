@@ -1,0 +1,129 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "service.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/channel_releases/{ChannelID}": {
+      "get": {
+        "operationId": "GetChannelReleases",
+        "responses": {
+          "200": {
+            "description": "Description",
+            "schema": {
+              "$ref": "#/definitions/releaserChannelReleases"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ChannelID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "tags": [
+          "Releases"
+        ]
+      }
+    },
+    "/v1/release/{ReleaseID}": {
+      "get": {
+        "operationId": "GetRelease",
+        "responses": {
+          "200": {
+            "description": "Description",
+            "schema": {
+              "$ref": "#/definitions/releaserRelease"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ReleaseID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "tags": [
+          "Releases"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "releaserChannel": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "format": "string"
+        },
+        "Name": {
+          "type": "string",
+          "format": "string"
+        }
+      }
+    },
+    "releaserChannelReleaseRequest": {
+      "type": "object",
+      "properties": {
+        "ChannelID": {
+          "type": "string",
+          "format": "string"
+        }
+      }
+    },
+    "releaserChannelReleases": {
+      "type": "object",
+      "properties": {
+        "Channel": {
+          "$ref": "#/definitions/releaserChannel"
+        },
+        "Releases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/releaserRelease"
+          }
+        }
+      }
+    },
+    "releaserRelease": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "format": "string"
+        },
+        "SHA": {
+          "type": "string",
+          "format": "string"
+        }
+      }
+    },
+    "releaserReleaseRequest": {
+      "type": "object",
+      "properties": {
+        "ReleaseID": {
+          "type": "string",
+          "format": "string"
+        }
+      }
+    }
+  }
+}
