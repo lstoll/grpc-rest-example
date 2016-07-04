@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package releaser;
 
+import "google/api/annotations.proto";
+
 message ChannelReleases {
     Channel Channel = 1;
     repeated Release Releases = 2;
@@ -13,8 +15,8 @@ message Release {
 }
 
 message Channel {
-    string ChannelID = 1;
-    string ChannelName = 2;
+    string ID = 1;
+    string Name = 2;
 }
 
 message ChannelReleaseRequest {
@@ -26,6 +28,14 @@ message ReleaseRequest {
 }
 
 service Releases {
-    rpc GetChannelReleases(ChannelReleaseRequest) returns (ChannelReleases) {}
-    rpc GetRelease(ReleaseRequest) returns (Release) {}
+    rpc GetChannelReleases(ChannelReleaseRequest) returns (ChannelReleases) {
+        option (google.api.http) = {
+            get: "/v1/channel_releases/{ChannelID}"
+        };
+    }
+    rpc GetRelease(ReleaseRequest) returns (Release) {
+        option (google.api.http) = {
+            get: "/v1/release/{ReleaseID}"
+        };
+    }
 }
