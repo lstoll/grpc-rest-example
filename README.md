@@ -2,6 +2,8 @@
 
 This is a demo app for building a service in Go, then exporting it with a REST and gRPC API.
 
+![Screenshot of REST API Explorer](https://cdn.lstoll.net/screen/Swagger_UI_2016-07-04_15-30-30.png)
+
 # Quickstart
 
 `make` will start the server. You can then either:
