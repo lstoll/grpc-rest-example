@@ -3,6 +3,7 @@
 
 require 'google/protobuf'
 
+require 'google/api/annotations'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "releaser.ChannelReleases" do
     optional :Channel, :message, 1, "releaser.Channel"
@@ -13,8 +14,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :SHA, :string, 2
   end
   add_message "releaser.Channel" do
-    optional :ChannelID, :string, 1
-    optional :ChannelName, :string, 2
+    optional :ID, :string, 1
+    optional :Name, :string, 2
   end
   add_message "releaser.ChannelReleaseRequest" do
     optional :ChannelID, :string, 1
